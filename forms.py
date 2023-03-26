@@ -10,5 +10,6 @@ class CourseForm(FlaskForm):
     course_rating = RadioField('Pick One',
                                choices=['Very Well', 'Well', 'Average', 'Poorly', 'Very Poorly'],
                                validators=[InputRequired()])
+    course_review = TextAreaField(validators=[InputRequired(), Length(max=300)])
     submit = SubmitField('Submit')
 

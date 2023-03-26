@@ -48,8 +48,9 @@
         {% endif %}
 
         <p>
+            <h3>How well was the course content covered?</h3>
             {{ form.course_rating.label }}
-            {{ form.course_rating(size=32)}}
+            {{ form.course_rating}}
         </p>
 
         {% if form.course_rating.errors %}
@@ -59,6 +60,21 @@
             {% endfor %}
         </ul>
         {% endif %}
+
+        <p>
+            <h3>In 300 words or less, explain your answer:</h3>
+            {{ form.course_review}}
+        </p>
+
+        {% if form.email.errors %}
+        <ul class="errors">
+            {% for error in form.course_rating.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {{ form.submit }}
     </form>
 </body>
 </html>
