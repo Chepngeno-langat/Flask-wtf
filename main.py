@@ -25,6 +25,19 @@ def index():
 
 @app.route('/success', methods=['GET', 'POST'])
 def success():
+    form = CourseForm()
+    name = form.name.data
+    enrolment_num = form.enrolment_num.data
+    email = form.email.data
+    course_rating = form.course_rating.data
+    course_review = form.course_review.data
+    if request.method == "POST":
+        with open('course_output', 'w') as text:
+            text.write(f"Name: {str(name)}\n")
+            text.write(f"GIC Enrolment Number: {str(enrolment_num)}")
+            text.write(f"Email: {str(email)}")
+            text.write(f"Course Rating: {str(course_rating)}")
+            text.write(f"Course Review: {str(course_review)}")
     return render_template('success.html')
 
 if __name__ == "__main__":
