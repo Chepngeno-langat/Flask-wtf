@@ -34,10 +34,10 @@ def success():
     if request.method == "POST":
         with open('course_output', 'w') as text:
             text.write(f"Name: {str(name)}\n")
-            text.write(f"GIC Enrolment Number: {str(enrolment_num)}")
-            text.write(f"Email: {str(email)}")
-            text.write(f"Course Rating: {str(course_rating)}")
-            text.write(f"Course Review: {str(course_review)}")
+            text.write(f"GIC Enrolment Number: {str(enrolment_num)}\n")
+            text.write(f"Email: {str(email)}\n")
+            text.write(f"Course Rating: {str(course_rating)}\n")
+            text.write(f"Course Review: {str(course_review)}\n")
     return render_template('success.html')
 
 if __name__ == "__main__":
