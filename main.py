@@ -10,6 +10,9 @@ def index():
     form = CourseForm()
     return render_template('index.html', form=form)
 
+@app.route('/success', methods=['GET', 'POST'])
+def success():
+    return render_template('success.html')
 
 if __name__ == "__main__":
     app.run()

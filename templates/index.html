@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Course Feedback Form</h1>
-    <form method="POST", action="{{ url_for('index') }}">
+    <form method="POST", action="{{ url_for('success') }}">
         {{ form.csrf_token }}
         <p>
             {{ form.name.label }}
